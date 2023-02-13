@@ -1,3 +1,6 @@
+// Assaf Alt, 207901075
+// Daniel Noach, 319130480
+
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");

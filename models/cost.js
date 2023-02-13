@@ -1,3 +1,6 @@
+// Assaf Alt, 207901075
+// Daniel Noach, 319130480
+
 const mongoose = require("mongoose");
 const Category = require("./category.js").schema;
 

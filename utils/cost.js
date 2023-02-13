@@ -1,3 +1,6 @@
+// Assaf Alt, 207901075
+// Daniel Noach, 319130480
+
 //If the user does not send one of the date parameters
 const dateSeeder = (year, month, day) => {
   const date = new Date();
