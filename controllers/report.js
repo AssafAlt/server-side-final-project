@@ -43,7 +43,7 @@ const createReport = async (req, res) => {
   } else {
     // If the user didn't make any purchase at the date was given
     return res.status(400).json({
-      message: `The user didn't made any purchase in ${formattedMonth} of ${year}.`,
+      message: `User didn ot made any purchase in ${formattedMonth}/${year}.`,
     });
   }
 };

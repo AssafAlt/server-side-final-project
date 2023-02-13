@@ -11,21 +11,12 @@ const costSchema = new mongoose.Schema({
     max: 6,
     required: [true, "Please enter user Id"],
   },
-  year: {
-    type: String,
-    min: 4,
-    max: 4,
-  },
-  month: {
-    type: String,
-    min: 2,
-    max: 2,
-  },
-  day: {
-    type: String,
-    min: 2,
-    max: 2,
-  },
+  year: String,
+
+  month: String,
+
+  day: String,
+
   description: {
     type: String,
 

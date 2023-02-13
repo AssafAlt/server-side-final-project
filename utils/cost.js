@@ -17,7 +17,7 @@ const dateSeeder = (year, month, day) => {
   return { year, month, day };
 };
 
-// Function to determine if the date the user sent is valid
+// Functions to determine if the date the user sent are valid
 
 const yearValidator = (year) => {
   const yearNumber = Number(year);
@@ -27,8 +27,6 @@ const yearValidator = (year) => {
     return true;
   }
 };
-
-//Month and day validators
 
 const monthValidator = (month) => {
   const monthNumber = Number(month);
