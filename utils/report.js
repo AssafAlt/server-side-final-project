@@ -13,7 +13,7 @@ const categories = [
 
 const getReport = async (user_id, year, month) => {
   try {
-    // Find costs documents that following user_id, year, and month parameters
+    // Find costs documents that following user_id, year and month parameters
     const costs = await Cost.find({
       user_id: user_id,
       year,
@@ -41,7 +41,7 @@ const getReport = async (user_id, year, month) => {
       return report;
     }
   } catch (err) {
-    // If there is an error while fetching the costs, return an undefined | error handeling is in the report.js file
+    return err;
   }
 };
 

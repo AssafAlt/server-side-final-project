@@ -6,7 +6,7 @@ const costSchema = new mongoose.Schema({
     type: String,
     min: 6,
     max: 6,
-    required: [true, "Please enter your Id"],
+    required: [true, "Please enter user Id"],
   },
   year: {
     type: String,

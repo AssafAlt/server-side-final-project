@@ -25,6 +25,8 @@ const yearValidator = (year) => {
   }
 };
 
+//Month and day validators
+
 const monthValidator = (month) => {
   const monthNumber = Number(month);
   if (monthNumber < 0 || monthNumber > 12) {
@@ -40,8 +42,6 @@ const dayValidator = (day) => {
     return false;
   } else if (dayNumber > 0 && dayNumber < 32) {
     return true;
-  } else {
-    return false;
   }
 };
 
@@ -49,9 +49,10 @@ const dayValidator = (day) => {
 
 const monthFormat = (month) => {
   const monthNumber = Number(month);
+
   if (monthNumber > 0 && monthNumber < 10) {
     return String("0" + monthNumber);
-  } else if (month.lengt === 2) {
+  } else if (monthNumber >= 10 && monthNumber <= 12) {
     return month;
   }
 };
@@ -60,7 +61,7 @@ const dayFormat = (day) => {
   const dayNumber = Number(day);
   if (dayNumber > 0 && dayNumber < 10) {
     return String("0" + dayNumber);
-  } else if (day.length == 2) {
+  } else if (dayNumber >= 10 && dayNumber <= 31) {
     return day;
   }
 };
