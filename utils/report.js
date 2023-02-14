@@ -29,7 +29,7 @@ const getReport = async (user_id, year, month) => {
       };
     }
 
-    // Create a report object by grouping the costs by category
+    // Create a report object by grouping costs by category
     const report = categories.reduce((result, category) => {
       result[category] = costs
         .filter((cost) => cost.category.name === category)
@@ -48,6 +48,7 @@ const getReport = async (user_id, year, month) => {
   }
 };
 
+//Validate the query parameters that sent to /report route
 const ReportDateValidator = (month, year) => {
   if (monthValidator(month) && yearValidator(year)) {
     return true;

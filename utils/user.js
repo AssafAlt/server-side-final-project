@@ -9,7 +9,9 @@ const getUserById = async (userId) => {
     const user = await User.findOne({ id: userId });
 
     return user;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 module.exports = { getUserById };

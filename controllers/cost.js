@@ -17,9 +17,9 @@ const addExpense = async (req, res) => {
   const { user_id, description, category, sum } = req.body;
   var { year, month, day } = req.body;
 
-  //Check if there is an user with this user_id
+  //User ID validation
   const user = await getUserById(user_id);
-  // If the user doesn't exist response with error
+  // If the user doesn't exist response with status and error message
   if (!user) {
     return res.status(401).json({
       success: false,
@@ -50,7 +50,7 @@ const addExpense = async (req, res) => {
   if (!dayValidator(day)) {
     return res.status(400).send({ error: "Invalid day" });
   }
-  //Using day and month format that we set in utils/cost.js
+  //Using mm/dd format that we set in utils/cost.js
   const formattedMonth = monthFormat(month);
   const formattedDay = dayFormat(day);
 
@@ -68,15 +68,15 @@ const addExpense = async (req, res) => {
       user_id,
     });
 
-    // add the new cost to db
+    // add the new cost to data base
     await cost.save();
 
-    // response with 200 and the new saved cost
+    // response with 200 status and message
     return res
       .status(200)
       .json({ success: true, message: "Cost successfully added" });
   } catch (e) {
-    // If there is any error during the add cost process this will response with the error came from mongo
+    // If there is any error during  add cost process ,this will response with the error came from mongoDB
     const errorKey = Object.keys(e.errors)[0].replace(".", " ");
     return res.status(401).json({
       success: false,

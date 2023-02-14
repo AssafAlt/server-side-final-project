@@ -7,7 +7,9 @@ const mongoose = require("mongoose");
 const connectMongo = async () => {
   try {
     mongoose.set("strictQuery", true);
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect(
+      "mongodb+srv://elcapitan:elcapitan12@cluster0.v9dmv.mongodb.net/serverSideProject"
+    );
 
     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline);
   } catch (err) {

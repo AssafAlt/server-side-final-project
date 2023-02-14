@@ -4,6 +4,7 @@
 const router = require("express").Router();
 const { addExpense } = require("../controllers/cost");
 
+/*POST method for /addcost route using addExpense function*/
 router.post("/", addExpense);
 
 module.exports = router;

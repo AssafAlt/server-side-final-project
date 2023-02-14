@@ -3,6 +3,7 @@
 
 const router = require("express").Router();
 
+//GET method for /report route , returning developers details
 router.get("/", (req, res) => {
   res.json({
     developer1: {

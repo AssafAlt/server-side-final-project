@@ -1,7 +1,7 @@
 // Assaf Alt, 207901075
 // Daniel Noach, 319130480
 
-require("dotenv").config();
+const dotenv = require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const connectMongo = require("./config/db");
@@ -10,6 +10,9 @@ const costRoute = require("./routes/cost");
 const reportRoute = require("./routes/report");
 const registerRoute = require("./routes/register");
 
+const PORT = process.env.PORT || 5000;
+
+//Connecting to mongo server
 connectMongo();
 const app = express();
 app.use(
@@ -19,7 +22,7 @@ app.use(
 );
 app.use(bodyParser.json());
 
-//routes
+//Routes
 app.use("/about", aboutRoute);
 app.use("/addcost", costRoute);
 app.use("/report", reportRoute);
