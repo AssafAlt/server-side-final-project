@@ -14,13 +14,15 @@ const createReport = async (req, res) => {
   const user_id = queryObject.user_id;
   // If any of the required parameters is missing, return an error message
   if (!user_id || !year || !month) {
-    res.status(400).json({ error: "There are some parameters that missing!" });
+    return res
+      .status(400)
+      .json({ error: "There are some parameters that missing!" });
   }
 
   //User ID validation
   const user = await getUserById(user_id);
   if (!user) {
-    res
+    return res
       .status(404)
       .json({ error: `There is no user with this ${user_id} id number` });
   }
